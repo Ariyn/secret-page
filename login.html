@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="./css/bootstrap.css">
+	<script src="./script/jquery.js"></script>
+	<title>혁신적인 클리핑 시스템 - I.C.S.</title>
+	<style>
+		#topBar {
+			width:100%;
+			height:50px;
+			border:1px solid black;
+		}
+		.titleDiv {
+			margin-top:45%;
+			padding:10px;
+
+			text-align:center;
+			color:#363636;
+
+			border-radius:10px;
+			background-color:#4daa50;
+		}
+		#loginForm>div {
+			margin-top:15px;
+		}
+		#joinButtonDiv {
+			margin-top:30px;
+		}
+		#joinButton {
+			border:0px;
+			
+			color:#363636;
+		}
+		#loginAnchor {
+			color:#363636;
+		}
+	</style>
+	<script>
+
+		function CreateFormGroup(name, type, info) {
+			var retVal = '<div class="form-group"> <label class="control-label col-sm-2" for="'+name+'Input">'+name+'</label><div class="col-sm-9"> <input type="'+type+
+						 '" class="form-control" id="'+name+'Input" placeholder="'+info+'"></div> </div>';
+			return retVal;
+		}
+		function init() {
+			$("#loginAnchor").click(function(e) {
+				$("#loginForm")
+					.empty()
+					.append(CreateFormGroup("id","text","your ID"))
+					.append(CreateFormGroup("password","password","password"))
+					.append("<button class='btn btn-primary' type='submit'>로그인</button>")
+
+			})
+		}
+		$(document).ready(init)
+	</script>
+</head>
+<body>
+	<div class="container">
+		<div class="col-md-3 col-sm-3 col-lg-3 col-sm-3"></div>
+		<div id="mainTypo" class="title col-sm-6 col-lg-6 col-sm-6">
+			<div class="titleDiv">
+			<!-- 짤방 부분이 계속해서 카운트 넘어가듯이 넘어가면서 짤방, 페이지, 만화 로 바뀜 -->
+				<h1>인생의 <span id="ChangeDescription">짤방</span></h1>
+				<span class="titleSpan">
+					그 어떠한 페이지, 장소, 상황에서도 I.C.S.는 가장 안전하게 <span id="ChangeDescription">짤방</span>을 저장합니다.
+				</span>
+				<div id="joinButtonDiv">
+					<form id="loginForm" class="form-horizontal" action="./join.html" method="post">
+						<button id="joinButton" class="btn btn-primary" type="submit">가입하기</button>
+						<div> 또는 <a id="loginAnchor" href="#">로그인하기</a></div>
+					</form>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</body>
+</html>

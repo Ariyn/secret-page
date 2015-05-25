@@ -24,7 +24,8 @@ function init() {
 
 function loadHtml(name) {
 	console.log("./resource/"+name)
-	
+	$("#frameView").attr("src","./resource/"+name)
+	/*
 	$.ajax({ 
 		url: "./resource/"+name, dataType: "html" 
 	}).done(function( responseHtml ) {
@@ -39,6 +40,7 @@ function loadHtml(name) {
 		// 	console.log(i, $children[i])
 		// }
 	});
+	*/
 }
 
 $(document).ready(init);
